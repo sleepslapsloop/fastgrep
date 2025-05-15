@@ -18,8 +18,18 @@ def main():
         print(f"Usage: {sys.argv[0]} <filepath> <filename> <pattern>")
         print(f"For example: {sys.argv[0]} data example.txt world")
         sys.exit(1)
+
+    if len(sys.argv) < 3:
+        print("Fatal Error: Insufficient Arguments")
+        print("Terminating with exit code: 1")
+        sys.exit(1)
+    elif len(sys.argv) == 3:
+        hit = search(f"data/{sys.argv[1]}", sys.argv[2])
+    elif len(sys.argv) == 5 and sys.argv[2] == "-p":
+        hit = search(f"{sys.argv[3]}/{sys.argv[1]}", sys.argv[4])
+    else:
+        print("Fatal Error: wrong order of arguments or excess or insufficient arguments")
     
-    hit = search(f"{sys.argv[1]}/{sys.argv[2]}", sys.argv[3])
     if hit:
         print("Check file, filename, or path", file=sys.stderr)
         sys.exit(hit)
