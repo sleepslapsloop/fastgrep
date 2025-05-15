@@ -11,7 +11,7 @@ lib.searchFile.restype = ctypes.c_int
 
 def search(filename: str, pattern: str) -> int:
     """Search filename for pattern, ret 0 on success"""
-    return lib.search_file(filename.encode('utf-8'), pattern.encode('utf-8'))
+    return lib.searchFile(filename.encode('utf-8'), pattern.encode('utf-8'))
 
 def main():
     if len(sys.argv) != 4:
