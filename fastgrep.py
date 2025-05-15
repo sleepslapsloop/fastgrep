@@ -14,10 +14,6 @@ def search(filename: str, pattern: str) -> int:
     return lib.searchFile(filename.encode('utf-8'), pattern.encode('utf-8'))
 
 def main():
-    if len(sys.argv) != 4:
-        print(f"Usage: {sys.argv[0]} <filepath> <filename> <pattern>")
-        print(f"For example: {sys.argv[0]} data example.txt world")
-        sys.exit(1)
 
     if len(sys.argv) < 3:
         print("Fatal Error: Insufficient Arguments")
