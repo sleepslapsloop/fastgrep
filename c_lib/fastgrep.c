@@ -16,8 +16,8 @@ int searchFile(const char *fileName, const char *pattern){
   if (fp == NULL) return -1;
   char buffer[MAX_LINE];
   while(fgets(buffer, MAX_LINE, fp)){
-    if(contains(buffer, patter))
-      print("%s", buffer);
+    if(contains(buffer, pattern))
+      printf("%s", buffer);
   }
   fclose(fp);
   return 0;

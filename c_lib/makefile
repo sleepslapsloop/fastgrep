@@ -1,12 +1,16 @@
 #makefile for C
 #compiler and flags
-CC = gcc
-FLAGS = -fPIC -O2 -fpermissive -Wall -Wextra
+#CC = gcc
+#FLAGS = -fPIC -O2 -Wall -Wextra
 
-all: $(TARGET)
+all: fastgrep.so
 
-$(TARGET): fastgrep.c
-	$(CC) $(FLAGS) -shared -o $(TARGET) fastgrep.c
+fastgrep.o: fastgrep.c
+	@gcc fastgrep.c -O2 -fPIC -Wextra -c fastgrep.o
 
-clean:
-	rm -f $(TARGET)
+fastgrep.so: fastgrep.o
+	@gcc fastgrep.o -shared -o fastgrep.so
+	@rm -rf fastgrep.o
+
+clean: fastgrep.so
+	@rm -rf fastgrep.so
