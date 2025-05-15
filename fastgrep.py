@@ -6,8 +6,8 @@ import os
 lib_path = os.path.join(os.path.dirname(__file__), "c_lib", "fastgrep.so")
 lib = ctypes.CDLL(lib_path)
 
-lib.search_file.argtypes = [ctypes.c_char_p, ctypes.c_char_p]
-lib.search_file.restype = ctypes.c_int
+lib.searchFile.argtypes = [ctypes.c_char_p, ctypes.c_char_p]
+lib.searchFile.restype = ctypes.c_int
 
 def search(filename: str, pattern: str) -> int:
     """Search filename for pattern, ret 0 on success"""
