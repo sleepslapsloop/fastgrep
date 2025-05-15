@@ -14,11 +14,12 @@ def search(filename: str, pattern: str) -> int:
     return lib.search_file(filename.encode('utf-8'), pattern.encode('utf-8'))
 
 def main():
-    if len(sys.argv) != 3:
-        print(f"Usage: {sys.argv[0]} <filename> <pattern>")
+    if len(sys.argv) != 4:
+        print(f"Usage: {sys.argv[0]} <filepath> <filename> <pattern>")
+        print(f"For example: {sys.argv[0]} data example.txt world")
         sys.exit(1)
-
-    hit = search(sys.argv[1], sys.argv[2])
+    
+    hit = search(f"{sys.argv[1]}/{sys.argv[2]}", sys.argv[3])
     if hit:
         print("Check file, filename, or path", file=sys.stderr)
         sys.exit(hit)
