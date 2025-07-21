@@ -1,6 +1,6 @@
 # Fastgrep
 
-My simple implementation of grep. It prints all the lines in a text file that contain the given string. I  just made this for fun and to showcase my skill. This is in no way close to the real GNU grep which has been optimised and written in pure C. But if you want to only use this for some godforsaken reason, using pypy3 instead of python interpreter will increase performance slightly.
+My simple implementation of grep. It prints all the lines in a text file that contain the given string. I  just made this for fun and to show I can use C and python together(idk why you would, but I did lol). This is in no way close to the real GNU grep which has been optimised and written in pure C. But if you want to only use this for some godforsaken reason, using pypy3 instead of python interpreter will increase performance slightly.
 
 ## Installation
 
